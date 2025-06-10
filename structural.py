@@ -17,3 +17,9 @@ class VideoStreamerProxy:
         # if it's premium, delegate to the real streamer
         return self.video_streamer.stream_video(video_name)
 if __name__ == "__main__":
+    # create a proxy for a non-premium user
+    non_premium_proxy = VideoStreamerProxy(is_premium_user=False)
+    print(non_premium_proxy.stream_video("Cool Movie"))  # Should show error
+    # create a proxy for a premium user
+    premium_proxy = VideoStreamerProxy(is_premium_user=True)
+    print(premium_proxy.stream_video("Cool Movie"))
