@@ -14,3 +14,13 @@ class President:
     def __init__(self, name):
         # initialize the president's attributes (only if not already initialized)
         if not hasattr(self, '_initialized'):
+            self.name = name
+            self._initialized = True
+    def get_name(self):
+        # Return the president's name
+        return self.name
+
+    def set_name(self, name):
+        # Update the president's name (e.g., after an election)
+        self.name = name
+
