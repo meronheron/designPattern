@@ -23,4 +23,11 @@ class President:
     def set_name(self, name):
         # Update the president's name (e.g., after an election)
         self.name = name
-
+if __name__ == "__main__":
+    # Attempt to create two presidents
+    president1 = President("Abraham lincoln")
+    president2 = President("Bill Cliton")
+# Check if they are the same instance
+    print(president1 is president2)  # True
+    print(f"President 1: {president1.get_name()}")  # Abraham lincoln
+    print(f"President 2: {president2.get_name()}") # Abraham lincoln
