@@ -11,3 +11,6 @@ class President:
             cls._instance = super(President, cls).__new__(cls)
         # Return the single instance
         return cls._instance
+    def __init__(self, name):
+        # initialize the president's attributes (only if not already initialized)
+        if not hasattr(self, '_initialized'):
