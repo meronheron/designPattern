@@ -10,3 +10,10 @@ class VideoStreamerProxy:
         self.is_premium_user = is_premium_user
         # Create the real video streamer
         self.video_streamer = VideoStreamer()
+    def stream_video(self, video_name):
+        # check if the user is a premium subscriber
+        if not self.is_premium_user:
+            return "Error: You need a premium subscription to stream videos!"
+        # if it's premium, delegate to the real streamer
+        return self.video_streamer.stream_video(video_name)
+if __name__ == "__main__":
