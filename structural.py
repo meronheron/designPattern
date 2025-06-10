@@ -4,3 +4,5 @@ class VideoStreamer:
     def stream_video(self, video_name):
         # simulate streaming a video
         return f"Streaming '{video_name}' in high quality!"
+# Proxy that controls access to the video streamer
+class VideoStreamerProxy:
