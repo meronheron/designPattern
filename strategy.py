@@ -1,4 +1,4 @@
-#strategy
+#behavioral design pattern
 class PaymentStrategy:# Strategy Interface: Base for all payment methods
     def pay(self, amount):
         pass  # every strategy must have a 'pay' method
