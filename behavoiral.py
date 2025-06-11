@@ -10,11 +10,11 @@ class CashPayment(PaymentStrategy):
 # Concrete Strategy 2: Paying with ATM Card
 class AtmCardPayment(PaymentStrategy):
     def pay(self, amount):
-        return f"Paid {amount} ETB with ATM card. Transaction approved!"
+        return f"Paid {amount}ETB with ATM card. Transaction approved!"
 # Concrete Strategy 3: Paying with Mobile App
 class MobileAppPayment(PaymentStrategy):
     def pay(self, amount):
-        return f"Paid ${amount}ETB with mobile app. Scanned QR code!"
+        return f"Paid {amount}ETB with mobile app. Scanned QR code!"
     
 class PizzaShop:# context: The Pizza Shop that processes payments 
     def __init__(self, payment_strategy):
