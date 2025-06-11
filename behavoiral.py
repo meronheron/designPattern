@@ -18,3 +18,11 @@ class TV:#reciever
             print("TV is off. Please turn it on first.")
     def get_state(self):#return the state of the tv
         return self.is_on, self.channel
+class Command(ABC):#command interface
+    @abstractmethod
+    def execute(self):
+        pass
+
+    @abstractmethod
+    def undo(self):
+        pass
