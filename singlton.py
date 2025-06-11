@@ -2,7 +2,7 @@
 ## create class that implements the Singleton pattern to ensure only one instance exists.
 class President:
     # Class variable to store the single instance
-    _instance = None
+    __instance = None
     #controls instance creation, ensuring only one instance is created
     def __new__(cls, name):
      # Check if a president instance already exists
@@ -16,7 +16,7 @@ class President:
         if not hasattr(self, '_initialized'):
             self.name = name
             self._initialized = True
-    def get_name(self):
+    def __get_name(self):
         # Return the president's name
         return self.name
 
