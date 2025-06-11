@@ -7,3 +7,11 @@ class PaymentStrategy:# Strategy Interface: Base for all payment methods
 class CashPayment(PaymentStrategy):
     def pay(self, amount):
         return f"Paid ${amount} with cash. Handed over bills!"
+# Concrete Strategy 2: Paying with ATM Card
+class CreditCardPayment(PaymentStrategy):
+    def pay(self, amount):
+        return f"Paid ${amount} with ATM card. Transaction approved!"
+# Concrete Strategy 3: Paying with Mobile App
+class MobileAppPayment(PaymentStrategy):
+    def pay(self, amount):
+        return f"Paid ${amount} with mobile app. Scanned QR code!"
