@@ -30,3 +30,6 @@ class TurnOnCommand(Command):#concrete command
     def __init__(self, tv: TV):
         self.tv = tv
         self.previous_state = tv.get_state()
+    def execute(self):#saves the current state (for undo)
+        self.previous_state = self.tv.get_state()
+        self.tv.turn_on()
