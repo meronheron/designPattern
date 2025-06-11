@@ -8,3 +8,8 @@ class RealPaymentService(PaymentService):# real subject class that implements th
     def process_payment(self, amount: float) -> str:
         # Simulate processing a payment
         return f"Processed payment of ${amount:.2f} successfully."
+class PaymentServiceProxy(PaymentService):#proxy class 
+    def __init__(self, is_authenticated: bool):
+        self.is_authenticated = is_authenticated
+        # Create the real payment service
+        self.real_service = RealPaymentService()
