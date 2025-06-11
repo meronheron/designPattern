@@ -26,3 +26,7 @@ class Command(ABC):#command interface
     @abstractmethod
     def undo(self):
         pass
+class TurnOnCommand(Command):#concrete command
+    def __init__(self, tv: TV):
+        self.tv = tv
+        self.previous_state = tv.get_state()
