@@ -1,32 +1,27 @@
-# creational design pattern
-## create class that implements the Singleton pattern to ensure only one instance exists.
+#creational design pattern
+## class that implements the Singleton pattern to ensure only one instance exists
 class GameSettings:
     # Private class variable to store the single instance
     _instance = None
-
     # Static method to get the single instance (like a gatekeeper)
     @staticmethod
     def get_instance():
         # Check if no instance exists
         if GameSettings._instance is None:
-            # Create the single instance
-            GameSettings._instance = GameSettings()
+            GameSettings._instance = GameSettings() # create single instance
         # Return the single instance
         return GameSettings._instance
 
     # Private constructor to control creation
     def __init__(self):
-        # Initialize settings only once
-        if not hasattr(self, '_initialized'):
+        if not hasattr(self, '_initialized'):  # Initialize settings only once
             self.volume = 50  # Default volume level
             self._initialized = True
-
-    # Method to get the volume level
+    #get the volume level
     def get_volume(self):
         return self.volume
-
-    # Method to set the volume level
-    def set_volume(self, volume):
+    
+    def set_volume(self, volume):# Method to set the volume level
         self.volume = volume
 
 if __name__ == "__main__":

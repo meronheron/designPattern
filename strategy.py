@@ -28,10 +28,9 @@ class PizzaShop:# context: The Pizza Shop that processes payments
         result = self.payment_strategy.pay(amount)
         return result
 shop = PizzaShop(CashPayment())  #cash payment
-print(shop.checkout(560))  # PizzaShop calls CashPayment's pay method
+print(shop.checkout(560))  
 
 shop.set_payment_strategy(AtmCardPayment())#ATM Card payment
-print(shop.checkout(560))  # PizzaShop calls AtmCardPayment's pay method
-
+print(shop.checkout(560))  
 shop.set_payment_strategy(MobileAppPayment())#Mobile App payment
-print(shop.checkout(560))# PizzaShop calls MobileAppPayment's pay method
+print(shop.checkout(560))
